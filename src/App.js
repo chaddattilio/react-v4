@@ -18,7 +18,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     petfinder.pet
-      .find({ output: "full", location: "Seattle, WA" })
+      .find({ output: "full", location: "Ann Arbor, MI" })
       .then(data => {
         let pets;
 
@@ -57,6 +57,8 @@ class App extends React.Component {
                 animal={pet.animal}
                 name={pet.name}
                 breed={breed}
+                media={pet.media}
+                location={`${pet.contact.city}, ${pet.contact.state}`}
               />
             );
           })}
